@@ -56,7 +56,7 @@ class NewsActivity : AppCompatActivity() {
                 showNews(articles)
                 binding.progressBar.isVisible = false
                 binding.swipeRefresh.isRefreshing = false
-                Log.d("trace","$articles")
+                //Log.d("trace","$articles")
 
             }
 
