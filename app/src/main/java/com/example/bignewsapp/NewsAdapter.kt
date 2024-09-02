@@ -4,6 +4,7 @@ package com.example.bignewsapp
 
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.app.ShareCompat
@@ -15,7 +16,8 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.bignewsapp.databinding.ListItemBinding
 
 
-class NewsAdapter(val a :Activity, val articles: ArrayList<Article>):Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(val a :Activity, val articles: ArrayList<Article>,val country :String):Adapter<NewsAdapter.NewsViewHolder>() {
+
     class NewsViewHolder(val binding : ListItemBinding): ViewHolder(binding.root) {
 
     }
@@ -28,7 +30,8 @@ class NewsAdapter(val a :Activity, val articles: ArrayList<Article>):Adapter<New
     override fun getItemCount() = articles.size
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-
+        if (country == "eg")
+            holder.binding.titleTv.textDirection = 2
         holder.binding.titleTv.text = articles[position].title
         holder.binding.sourceTv.text = articles[position].source.name
 

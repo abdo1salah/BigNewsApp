@@ -3,11 +3,11 @@ package com.example.bignewsapp
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.bignewsapp.databinding.ActivityNewsBinding
+import com.google.android.gms.ads.AdRequest
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,6 +29,8 @@ class NewsActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
         val pref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
         country = pref.getString("country","us")!!
         category = intent.getStringExtra("category")!!
@@ -66,7 +68,7 @@ class NewsActivity : AppCompatActivity() {
         })
     }
     private fun showNews(articles : ArrayList<Article>){
-        val adapter = NewsAdapter(this,articles)
+        val adapter = NewsAdapter(this,articles,country)
         binding.newsList.adapter =  adapter
     }
 
