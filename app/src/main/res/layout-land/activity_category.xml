@@ -8,16 +8,15 @@
     tools:context=".CategoryActivity">
 
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/general_cv"
         android:layout_width="0dp"
         android:layout_height="160dp"
         app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="@id/entertainment_cv"
         app:layout_constraintStart_toStartOf="@+id/sports_cv"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar"
-        app:cardCornerRadius="20dp">
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
 
         <ImageView
             android:layout_width="match_parent"
@@ -38,15 +37,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/sports_cv"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
         app:cardBackgroundColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/general_cv"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toStartOf="@+id/technology_cv"
-        app:cardCornerRadius="20dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/general_cv">
 
         <ImageView
             android:layout_width="match_parent"
@@ -66,14 +65,14 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/technology_cv"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:cardBackgroundColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/sports_cv"
+        app:cardCornerRadius="20dp"
 
-        app:layout_constraintTop_toTopOf="@+id/sports_cv"
         app:layout_constraintEnd_toStartOf="@id/business_cv"
-        app:cardCornerRadius="20dp">
+        app:layout_constraintStart_toEndOf="@+id/sports_cv"
+        app:layout_constraintTop_toTopOf="@+id/sports_cv">
 
         <ImageView
             android:layout_width="match_parent"
@@ -94,14 +93,14 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/business_cv"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
 
         app:cardBackgroundColor="@color/black"
-        app:layout_constraintStart_toEndOf="@id/technology_cv"
-        app:layout_constraintTop_toTopOf="@+id/technology_cv"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toStartOf="@+id/entertainment_cv"
-        app:cardCornerRadius="20dp">
+        app:layout_constraintStart_toEndOf="@id/technology_cv"
+        app:layout_constraintTop_toTopOf="@+id/technology_cv">
 
         <ImageView
             android:layout_width="match_parent"
@@ -121,13 +120,14 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/entertainment_cv"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/business_cv"
         app:layout_constraintTop_toTopOf="@+id/technology_cv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="20dp">
+        android:layout_marginEnd="10dp">
 
         <ImageView
             android:layout_width="match_parent"
@@ -145,20 +145,20 @@
             android:textColor="@color/white" />
 
     </androidx.cardview.widget.CardView>
+
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_marginTop="10dp"
+
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
 
     </com.google.android.material.appbar.AppBarLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
